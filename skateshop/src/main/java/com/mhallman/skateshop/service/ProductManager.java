@@ -17,6 +17,7 @@ public class ProductManager {
 	 * Initialization of variables used in ProductManager class
 	 */
 	private PreparedStatement addProductStmt;
+	private PreparedStatement deleteProductStmt;
 	private PreparedStatement deleteAllProductsStmt;
 	private PreparedStatement getAllProductsStmt;
 	private dbConnect dbconn = new dbConnect();
@@ -51,6 +52,7 @@ public class ProductManager {
 
 			addProductStmt = conn.prepareStatement("INSERT INTO Product (product_name,brand_name,price) VALUES (?, ?, ?)");
 			deleteAllProductsStmt = conn.prepareStatement("DELETE FROM Product");
+			deleteProductStmt = conn.prepareStatement("DELETE FROM Product WHERE id_product=?");
 			getAllProductsStmt = conn.prepareStatement("SELECT id_product, product_name,brand_name, price FROM Product");
 
 		} catch (SQLException e) {
@@ -92,6 +94,17 @@ public class ProductManager {
 		return count;	
 	}
 	
+	
+	public void deleteProduct(Product product){
+
+		try {
+			deleteProductStmt.setLong(1, product.getId_product());
+			deleteProductStmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
 	/**
 	 * Method getting all existing Products from Database
 	 * @return Products

@@ -21,10 +21,7 @@
 		    <div>
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
-		            <li><a href="deleteAllProducts.jsp">Delete product</a></li>
-		            <li><a href="getAllProducts.jsp">Show all products</a></li>
-		            <!--<li><a href="updateProductById.jsp">Update product</a></li> 
-		            <li><a href="deleteProductById.jsp">Delete product by id</a></li> -->
+		            <li><a href="productDeleteData.jsp">Delete product</a></li>
 		          </ul>
 		    </div>
 		  </div>

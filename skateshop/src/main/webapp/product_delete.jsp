@@ -25,22 +25,22 @@
 		  </div>
 		</nav>
 
-<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
-<jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
-
-<div class="well well-sm">
-	<form class="form-inline" action="product_add.jsp">
-		<div class="form-group">
-			<input type="text" class="form-control" name="product_name" placeholder="Enter product name" />
+		<jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
+		
+		<jsp:setProperty name="Product" property="*" /> 
+		
+		<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
+		
+		<% 
+			ProductManager.deleteProduct(Product);
+		%>
+		
+		<h2>This product has been deleted from database: </h2>
+		<div class="well">
+			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
+			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
+			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
 		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" name="brand_name" placeholder="Enter brand name" />
-		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" name="price" placeholder="Enter price" />
-		</div>
-	<input type="submit" class="btn btn-primary" value="Add" />
-	</form>
-</div>
 
 </body>
+</html>

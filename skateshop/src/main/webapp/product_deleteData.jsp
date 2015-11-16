@@ -29,17 +29,11 @@
 <jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
 
 <div class="well well-sm">
-	<form class="form-inline" action="product_add.jsp">
+	<form class="form-inline" action="product_delete.jsp">
 		<div class="form-group">
-			<input type="text" class="form-control" name="product_name" placeholder="Enter product name" />
+			<input type="text" class="form-control" name="id_product" placeholder="Enter ID of product to delete" />
 		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" name="brand_name" placeholder="Enter brand name" />
-		</div>
-		<div class="form-group">
-			<input type="text" class="form-control" name="price" placeholder="Enter price" />
-		</div>
-	<input type="submit" class="btn btn-primary" value="Add" />
+	<input type="submit" class="btn btn-danger" value="Delete" />
 	</form>
 </div>
 
