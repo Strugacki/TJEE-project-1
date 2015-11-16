@@ -20,29 +20,26 @@
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
+		            <li><a href="product_updateData.jsp">Update product</a></li>
 		            <li><a href="product_getAll.jsp">Show all products</a></li>
 		          </ul>
 		    </div>
 		  </div>
 		</nav>
 
-		<jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
-		
-		<jsp:setProperty name="Product" property="*" /> 
-		
-		<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
-		
-		<% 
-			ProductManager.addProduct(Product);
-		%>
-		
-		<h2>Following product has been added to database: </h2>
-		<div class="well">
-			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
-			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
-			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
-			<a href="product_addData.jsp" class="btn btn-primary" value="Add another">Add another</a>
+<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
+<jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
+
+<div class="well well-sm">
+	<form class="form-inline" action="product_update.jsp">
+		<div class="form-group">
+			<input type="text" class="form-control" name="id_product" placeholder="Enter ID of Product to update" />
 		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" name="price" placeholder="Enter new price" />
+		</div>
+	<input type="submit" class="btn btn-primary" value="Update" />
+	</form>
+</div>
 
 </body>
-</html>

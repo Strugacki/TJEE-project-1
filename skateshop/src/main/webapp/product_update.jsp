@@ -20,7 +20,7 @@
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
-		            <li><a href="product_getAll.jsp">Show all products</a></li>
+		            <li><a href="product_updateData.jsp">Update product</a></li>
 		          </ul>
 		    </div>
 		  </div>
@@ -33,7 +33,7 @@
 		<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
 		
 		<% 
-			ProductManager.addProduct(Product);
+			ProductManager.updateProduct(Product);
 		%>
 		
 		<h2>Following product has been added to database: </h2>
@@ -41,7 +41,7 @@
 			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
 			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
 			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
-			<a href="product_addData.jsp" class="btn btn-primary" value="Add another">Add another</a>
+			<a href="product_updateData.jsp" class="btn btn-primary" value="Update another"></a>
 		</div>
 
 </body>

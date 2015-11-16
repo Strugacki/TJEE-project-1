@@ -21,7 +21,8 @@
 		    <div>
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
-		            <li><a href="productDeleteData.jsp">Delete product</a></li>
+		            <li><a href="product_DeleteData.jsp">Delete product</a></li>
+		             <li><a href="product_getAll.jsp">Show all products</a></li>
 		          </ul>
 		    </div>
 		  </div>

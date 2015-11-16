@@ -1,3 +1,4 @@
+<%@page import="com.mhallman.skateshop.domain.Product"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -26,23 +27,16 @@
 		  </div>
 		</nav>
 
-		<jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
-		
-		<jsp:setProperty name="Product" property="*" /> 
-		
 		<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
-		
-		<% 
-			ProductManager.addProduct(Product);
-		%>
-		
-		<h2>Following product has been added to database: </h2>
-		<div class="well">
-			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
-			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
-			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
-			<a href="product_addData.jsp" class="btn btn-primary" value="Add another">Add another</a>
-		</div>
+		<ul class="list-group">
+			<% 
+				for (Product product : ProductManager.getAllProducts()) {
+					out.println("<li class=\"list-group-item col-lg-6\">");
+					out.println("<p>Product name: " + product.getProduct_name() + "</p></br><p> Brand name: " + product.getBrand_name() + "</p></br><p> Price: " + product.getPrice() + "</p>");
+					out.println("</li>");
+				}
+				out.close();
+			%>
+		<ul>
 
 </body>
-</html>

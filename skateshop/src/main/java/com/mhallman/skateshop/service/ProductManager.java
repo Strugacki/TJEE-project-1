@@ -19,6 +19,7 @@ public class ProductManager {
 	private PreparedStatement addProductStmt;
 	private PreparedStatement deleteProductStmt;
 	private PreparedStatement deleteAllProductsStmt;
+	private PreparedStatement updateProductStmt;
 	private PreparedStatement getAllProductsStmt;
 	private dbConnect dbconn = new dbConnect();
 	private Connection conn = dbconn.getConnection();
@@ -52,6 +53,7 @@ public class ProductManager {
 
 			addProductStmt = conn.prepareStatement("INSERT INTO Product (product_name,brand_name,price) VALUES (?, ?, ?)");
 			deleteAllProductsStmt = conn.prepareStatement("DELETE FROM Product");
+			updateProductStmt = conn.prepareStatement("UPDATE Product set price=? WHERE id_product=?");
 			deleteProductStmt = conn.prepareStatement("DELETE FROM Product WHERE id_product=?");
 			getAllProductsStmt = conn.prepareStatement("SELECT id_product, product_name,brand_name, price FROM Product");
 
@@ -69,6 +71,17 @@ public class ProductManager {
 	public void deleteProducts(){
 		try {
 			deleteAllProductsStmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateProduct(Product product){
+		try {
+			updateProductStmt.setDouble(1, product.getPrice());
+			updateProductStmt.setLong(2, product.getId_product());
+			updateProductStmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
