@@ -21,6 +21,7 @@
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
+		            <li><a href="product_updateData.jsp">Update product</a></li>
 		            <li><a href="product_getAll.jsp">Show all products</a></li>
 		          </ul>
 		    </div>
@@ -31,7 +32,7 @@
 		<ul class="list-group">
 			<% 
 				for (Product product : ProductManager.getAllProducts()) {
-					out.println("<li class=\"list-group-item col-lg-6\">");
+						
 					out.println("<p>Product name: " + product.getProduct_name() + "</p></br><p> Brand name: " + product.getBrand_name() + "</p></br><p> Price: " + product.getPrice() + "</p>");
 					out.println("</li>");
 				}

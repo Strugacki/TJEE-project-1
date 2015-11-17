@@ -14,7 +14,7 @@
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <p class="navbar-brand">Skateshop Online</p>
+		      <p class="navbar-brand"><a href="index.jsp">Skateshop Online</a></p>
 		    </div>
 		    <div>
 		          <ul class="nav navbar-nav">

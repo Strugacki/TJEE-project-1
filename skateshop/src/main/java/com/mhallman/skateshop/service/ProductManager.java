@@ -53,7 +53,7 @@ public class ProductManager {
 
 			addProductStmt = conn.prepareStatement("INSERT INTO Product (product_name,brand_name,price) VALUES (?, ?, ?)");
 			deleteAllProductsStmt = conn.prepareStatement("DELETE FROM Product");
-			updateProductStmt = conn.prepareStatement("UPDATE Product set price=? WHERE id_product=?");
+			updateProductStmt = conn.prepareStatement("UPDATE Product SET price=? WHERE id_product=?");
 			deleteProductStmt = conn.prepareStatement("DELETE FROM Product WHERE id_product=?");
 			getAllProductsStmt = conn.prepareStatement("SELECT id_product, product_name,brand_name, price FROM Product");
 

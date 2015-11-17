@@ -14,13 +14,14 @@
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <p class="navbar-brand">Skateshop Online</p>
+		      <p class="navbar-brand"><a href="index.jsp">Skateshop Online</a></p>
 		    </div>
 		    <div>
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
 		            <li><a href="product_updateData.jsp">Update product</a></li>
+		            <li><a href="product_getAll.jsp">Show all products</a></li>
 		          </ul>
 		    </div>
 		  </div>
@@ -36,7 +37,7 @@
 			ProductManager.updateProduct(Product);
 		%>
 		
-		<h2>Following product has been added to database: </h2>
+		<h2>Following product has been updated: </h2>
 		<div class="well">
 			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
 			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
