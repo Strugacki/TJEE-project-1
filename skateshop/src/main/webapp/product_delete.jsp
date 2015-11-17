@@ -42,6 +42,7 @@
 			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
 			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
 			<a href="product_deleteData.jsp" class="btn btn-danger">Delete another product</a>
+			<a href="product_deleteAll.jsp" class="btn btn-danger">Delete all products</a>
 		</div>
 
 </body>

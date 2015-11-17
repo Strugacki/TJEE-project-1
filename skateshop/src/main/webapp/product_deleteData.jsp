@@ -34,6 +34,7 @@
 			<input type="text" class="form-control" name="id_product" placeholder="Enter ID of product to delete" />
 		</div>
 		<input type="submit" class="btn btn-danger" value="Delete" />
+		<a href="product_deleteAll.jsp" class="btn btn-danger">Delete all products</a>
 	</form>
 </div>
 

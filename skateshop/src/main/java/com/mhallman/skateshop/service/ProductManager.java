@@ -118,6 +118,15 @@ public class ProductManager {
 			e.printStackTrace();
 		}	
 	}
+	
+	public void deleteAllProducts(){
+		try {
+			deleteAllProductsStmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	/**
 	 * Method getting all existing Products from Database
 	 * @return Products
