@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,12 +13,13 @@
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <p class="navbar-brand">Skateshop Online</p>
+		       <p class="navbar-brand"><a href="index.jsp">Skateshop Online</a></p>
 		    </div>
 		    <div>
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
+		            <li><a href="product_getAll.jsp">Show all products</a></li>
 		          </ul>
 		    </div>
 		  </div>
@@ -33,7 +33,7 @@
 		<div class="form-group">
 			<input type="text" class="form-control" name="id_product" placeholder="Enter ID of product to delete" />
 		</div>
-	<input type="submit" class="btn btn-danger" value="Delete" />
+		<input type="submit" class="btn btn-danger" value="Delete" />
 	</form>
 </div>
 

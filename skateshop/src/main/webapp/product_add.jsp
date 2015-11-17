@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +13,7 @@
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <p class="navbar-brand">Skateshop Online</p>
+		       <p class="navbar-brand"><a href="index.jsp">Skateshop Online</a></p>
 		    </div>
 		    <div>
 		          <ul class="nav navbar-nav">
@@ -41,7 +40,7 @@
 			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
 			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
 			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
-			<a href="product_addData.jsp" class="btn btn-primary" value="Add another">Add another</a>
+			<a href="product_addData.jsp" class="btn btn-primary">Add another</a>
 		</div>
 
 </body>

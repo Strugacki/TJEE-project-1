@@ -14,12 +14,13 @@
 		<nav class="navbar navbar-default">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-		      <p class="navbar-brand">Skateshop Online</p>
+		       <p class="navbar-brand"><a href="index.jsp">Skateshop Online</a></p>
 		    </div>
 		    <div>
 		          <ul class="nav navbar-nav">
 		            <li><a href="product_addData.jsp">Add product</a></li>
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
+		            <li><a href="product_getAll.jsp">Show all products</a></li>
 		          </ul>
 		    </div>
 		  </div>
@@ -40,6 +41,7 @@
 			<p>Product name: <jsp:getProperty name="Product" property="product_name"></jsp:getProperty></p><br/>
 			<p>Brand name: <jsp:getProperty name="Product" property="brand_name"></jsp:getProperty></p><br/>
 			<p>Price: <jsp:getProperty name="Product" property="price"></jsp:getProperty> pln</p>
+			<a href="product_deleteData.jsp" class="btn btn-danger">Delete another product</a>
 		</div>
 
 </body>
