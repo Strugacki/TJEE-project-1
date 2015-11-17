@@ -24,6 +24,7 @@
 		            <li><a href="product_deleteData.jsp">Delete product</a></li>
 		            <li><a href="product_updateData.jsp">Update product</a></li>
 		            <li><a href="product_getAll.jsp">Show all products</a></li>
+		            <li><a href="survey">Fill a survey</a></li>
 		          </ul>
 		    </div>
 		  </div>
