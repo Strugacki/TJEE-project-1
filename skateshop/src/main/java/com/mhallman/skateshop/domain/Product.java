@@ -1,6 +1,8 @@
 package com.mhallman.skateshop.domain;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
 
 	/**
 	 * Initialization of variables used in Product class
@@ -77,7 +79,7 @@ public class Product {
 	 * @return the price
 	 */
 	public double getPrice() {
-		return price;
+		return this.price;
 	}
 
 	/**

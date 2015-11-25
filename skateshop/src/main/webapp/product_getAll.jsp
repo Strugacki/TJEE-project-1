@@ -1,6 +1,6 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@page import="com.mhallman.skateshop.domain.Product"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,16 +28,25 @@
 		  </div>
 		</nav>
 
-		<jsp:useBean id="ProductManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
-		<ul class="list-group">
-			<% 
-				for (Product product : ProductManager.getAllProducts()) {
-						
-					out.println("<p>Product name: " + product.getProduct_name() + "</p></br><p> Brand name: " + product.getBrand_name() + "</p></br><p> Price: " + product.getPrice() + "</p>");
-					out.println("</li>");
-				}
-				out.close();
-			%>
-		</ul>
-
+		<jsp:useBean id="productManager" class="com.mhallman.skateshop.service.ProductManager" scope="application" />
+		<jsp:useBean id="Product" class="com.mhallman.skateshop.domain.Product" scope="session" />
+		<c:forEach var="product" items="${productManager.allProducts}">
+		<div class="well well-sm">
+		<form class="form-inline" action="product_delete.jsp">
+		<p>Product ID: <c:out value="${product.id_product}"></c:out></p>
+		
+		<p>Product name: <c:out value="${product.product_name}"></c:out></p>
+		
+		<p>Brand name: <c:out value="${product.brand_name}"></c:out></p>
+		 
+		<p>Price : <c:out value="${product.price}"></c:out></p>
+		
+		<input type="hidden" class="form-control" name="id_product" value="<c:out value="${product.id_product}"></c:out>">
+		<input type="submit" class="btn btn-danger" value="Delete" />
+		</form>
+		</div>
+		</c:forEach> 
+		 
+	
 </body>
+</html>

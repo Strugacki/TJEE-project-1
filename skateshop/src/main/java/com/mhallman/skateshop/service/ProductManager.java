@@ -1,5 +1,6 @@
 package com.mhallman.skateshop.service;
 
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import com.mhallman.skateshop.domain.Product;
 
-public class ProductManager {
+public class ProductManager implements Serializable{
 
 	
 	/**
